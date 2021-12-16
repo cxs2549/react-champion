@@ -1,8 +1,11 @@
+import {Fragment} from 'react'
+import Header from "./components/Header/Header"
+
 const App = () => {
   return (
-    <div className="text-red-500">
-      tailwind ready
-    </div>
+    <Fragment>
+      <Header  />
+    </Fragment>
   )
 }
 
