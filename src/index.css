@@ -11,4 +11,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  scrollbar-width: none;
+}
+
+#close path {
+  stroke: #fff;
+}
+
+#menu {
+  max-height: calc(100vh - 80px);
+}
+
+.stop-flow {
+  overflow-y: hidden;
+}
+
 

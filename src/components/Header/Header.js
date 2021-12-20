@@ -5,9 +5,10 @@ import Burger from './Burger'
 import { useState, useRef } from 'react'
 import {GrClose} from 'react-icons/gr'
 import useOnClickOutside from 'use-onclickoutside'
+import Headroom from 'react-headroom'
 
 const StyledHeader = styled.header.attrs({
-	className: 'h-20 flex items-center shadow px-4 bg-blue-700 text-white'
+	className: 'h-20 flex items-center bg-blue-500 text-white'
 })`
 `
 const Logo = () => (
@@ -62,10 +63,12 @@ const Search = () => {
 				</g>
 			</svg>
 			<div
-				className={`fixed left-0 top-0 bg-white w-full h-20 z-10 flex items-center px-4 transition-opacity duration-300 ${isOpen
+				className={`fixed left-0 top-0 bg-blue-500 w-full h-20 z-10 flex items-center px-4 gap-4 transition-opacity duration-300 xl:hidden ${isOpen
 					? 'opacity-100'
 					: 'opacity-0 pointer-events-none'}`}
 			>
+			<img src={logo} alt="" className="w-12" />
+
 				<div className="relative w-full flex">
                     <div className="absolute left-0 top-1/2 transform -translate-y-1/2">
                     <svg
@@ -83,7 +86,7 @@ const Search = () => {
 				<g>
 					<path
 						fill="none"
-						stroke="#000"
+						stroke="#fff"
 						stroke-width="1.2"
 						stroke-linecap="round"
 						stroke-linejoin="round"
@@ -91,7 +94,7 @@ const Search = () => {
 					/>
 					<path
 						fill="none"
-						stroke="#000"
+						stroke="#fff"
 						stroke-width="1.2"
 						stroke-linecap="round"
 						stroke-linejoin="round"
@@ -105,10 +108,10 @@ const Search = () => {
                         ref={inputRef}
 						type="search"
 						placeholder="Search"
-						className="w-full py-3 px-10 bg-white focus:outline-none text-gray-800"
+						className="w-full py-3 px-10 bg-transparent focus:outline-none text-gray-200 placeholder-gray-200"
 					/>
-				<button onClick={() => setOpen(false)} className="absolute right-3 top-1/2 transform -translate-y-1/2" >
-                    <GrClose size={26} />
+				<button onClick={() => setOpen(false)} className="absolute right-3 top-1/2 transform -translate-y-1/2 " >
+                    <GrClose id="close" size={26} />
                 </button>
 				</div>
 			</div>
@@ -144,15 +147,17 @@ const Bag = () => <BsBag size={26} />
 
 const Header = () => {
 	return (
-		<StyledHeader>
-			<div className="max-w-7xl mx-auto flex items-center w-full gap-6">
-				<Logo />
-				<Search />
-				<Heart />
-				<Bag />
-				<Burger />
-			</div>
-		</StyledHeader>
+		<Headroom>
+			<StyledHeader>
+				<div className="max-w-7xl mx-auto flex items-center w-full gap-6 pl-4 xl:pl-0 pr-2 md:pr-4 xl:pr-0">
+					<Logo />
+					<Search />
+					<Heart />
+					<Bag />
+					<Burger />
+				</div>
+			</StyledHeader>
+		</Headroom>
 	)
 }
 export default Header
