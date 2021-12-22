@@ -1,18 +1,18 @@
-import {Fragment} from 'react'
+import { Fragment } from 'react'
 import Footer from './components/Footer/Footer'
-import Header from "./components/Header/Header"
+import Header from './components/Header/Header'
+import Home from './views/Home/Home'
 
 const App = () => {
-  return (
-    <Fragment>
-      <Header  />
-      <main className="h-screen bg-red-400">
-
-      </main>
-      <Footer />
-      {/* <footer className="bg-blue-600 h-24"></footer> */}
-    </Fragment>
-  )
+	return (
+		<Fragment>
+			<Header />
+			<main>
+				<Home />
+			</main>
+			<Footer />
+		</Fragment>
+	)
 }
 
 export default App

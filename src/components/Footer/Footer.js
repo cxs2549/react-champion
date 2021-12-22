@@ -39,8 +39,8 @@ const Footer = () => {
                     ©2021 CxS for Hanesbrands Inc.  All rights reserved.
                     </div>
                     <div className="capitalize flex gap-8 text-sm px-4 xl:px-0">
-                        <a href="/">terms & conditions</a>
-                        <a href="/">privacy policy</a>
+                        <a href="/" className="hover:underline">terms & conditions</a>
+                        <a href="/" className="hover:underline">privacy policy</a>
                     </div>
                 </div>
             </div>

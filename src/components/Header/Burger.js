@@ -139,7 +139,7 @@ const Burger = () => {
 			</Menu>
 			<div
 				className={`${isOpen
-					? 'opacity-80 '
+					? 'opacity-60 '
 					: 'opacity-0'} pointer-events-none fixed top-20 left-0 w-full h-screen bg-black transition-opacity duration-150`}
 			/>
 		</StyledBurger>
